@@ -29,36 +29,6 @@ modelo = DecisionTreeClassifier(
 modelo.fit(X, y)
 
 # 5. Realizar una predicción
-
-# --------------------------------------------------
-# 2. Definir variables independientes y dependiente
-# --------------------------------------------------
-
-X = df[["edad", "ingreso"]]
-y = df["compra"]
-
-
-# --------------------------------------------------
-# 3. Crear el modelo de árbol de decisión
-# --------------------------------------------------
-
-modelo = DecisionTreeClassifier(
-    max_depth=3,
-    random_state=42
-)
-
-
-# --------------------------------------------------
-# 4. Entrenar el modelo
-# --------------------------------------------------
-
-modelo.fit(X, y)
-
-
-# --------------------------------------------------
-# 5. Realizar una predicción
-# --------------------------------------------------
-
 nuevo = pd.DataFrame({
     "edad": [38],
     "ingreso": [2800]
