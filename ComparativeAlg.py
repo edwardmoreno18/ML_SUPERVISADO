@@ -16,6 +16,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import GradientBoostingClassifier
 
 
 # ============================
@@ -67,7 +68,8 @@ modelos = {
     "Random Forest": RandomForestClassifier(n_estimators=100, random_state=42),
     "KNN": KNeighborsClassifier(n_neighbors=3),
     "SVM": SVC(kernel="linear"),
-    "Naive Bayes": GaussianNB()
+    "Naive Bayes": GaussianNB(),
+    "GradientBoosting": GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, random_state=42)
 }
 
 

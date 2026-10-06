@@ -21,7 +21,12 @@ modelo = SVC(kernel="linear")
 modelo.fit(X,y)
 
 # 5. Nuevo dato
-nuevo = pd.DataFrame({"edad":[38],"ingreso":[2800]})
+nuevo = pd.DataFrame({"edad":[38],"ingreso":[800]})
 
 # 6. Predicción
+prediccion = modelo.predict(nuevo)
 print("Predicción:", modelo.predict(nuevo))
+if prediccion[0] == 1:
+    print("Resultado: Compra")
+else:
+    print("Resultado: No compra")

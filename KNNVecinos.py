@@ -6,14 +6,14 @@ from sklearn.preprocessing import StandardScaler
 data = {
     "edad":[25,30,35,40,45,50,23,28],
     "ingreso":[2000,2500,3000,3500,4000,4500,1800,2200],
-    "compra":[0,0,1,1,1,1,0,0]
+    "credito":[0,0,1,1,1,1,0,0]
 }
 
 df = pd.DataFrame(data)
 
 # 2. Definir variables
 X = df[["edad","ingreso"]]
-y = df["compra"]
+y = df["credito"]
 
 # Estandarización
 scaler = StandardScaler()
@@ -32,5 +32,10 @@ nuevo = pd.DataFrame({"edad":[38],"ingreso":[2800]})
 nuevo_escalado = scaler.transform(nuevo)
 
 # 6. Predicción
-print("Predicción:", modelo.predict(nuevo_escalado))
+prediccion = modelo.predict(nuevo_escalado)
+print("Predicción:")
+if prediccion[0] == 1:
+    print("Credito Aprobado")
+else:
+    print("Credito Rechazado")
 

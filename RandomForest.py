@@ -24,4 +24,9 @@ modelo.fit(X,y)
 nuevo = pd.DataFrame({"edad":[38],"ingreso":[2800]})
 
 # 6. Predicción
-print("Predicción:", modelo.predict(nuevo))
+prediccion = modelo.predict(nuevo)
+print("Predicción:")
+if prediccion[0] == 1:
+    print("Resultado: Compra")
+else:
+    print("Resultado: No compra")
